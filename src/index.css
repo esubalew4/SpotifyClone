@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-neutral: #000;
+  --color-primary: rgb(41, 41, 41);
+  --color-secondary: rgb(32, 32, 32);
+  --color-tertiary: var(--color-neutral-700);
+  --color-text: rgb(187, 187, 187);
+  --color-text-p: #fff;
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+@utility p-hover {
+  @apply hover:brightness-150 py-1 hover:scale-104 duration-100;
+}
+* {
+  font-family: "montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--color-neutral);
+}
+#root {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px 8px 8px;
+  overflow: hidden;
+}
