@@ -10,7 +10,7 @@ const Header = () => {
   const [menuBarOpen, setMenuBarOpen] = useState(false);
   return (
     <>
-      <header className=" justify-between text-text w-full top-0 right-0 left-0 h-16 bg-neutral flex items-center pl-7 pr-2">
+      <header className=" min-h-16  justify-between text-text w-full top-0 right-0 left-0 h-16 bg-neutral flex items-center pl-7 pr-2">
         {/* left side */}
         <div className="flex-center">
           <BsSpotify
