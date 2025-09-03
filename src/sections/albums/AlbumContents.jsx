@@ -35,7 +35,7 @@ const AlbumContents = ({ item }) => {
 
   return (
     <div
-      className={` relative flex-1 rounded-md min-w-72  overflow-y-hidden flex flex-col gap-4 `}
+      className={` relative flex-1 rounded-md min-w-72  overflow-y-hidden flex flex-col gap-4 mr-2`}
     >
       {" "}
       <div

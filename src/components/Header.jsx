@@ -5,12 +5,12 @@ import { CiSearch } from "react-icons/ci";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { GrHomeRounded } from "react-icons/gr";
 import { HiArchive } from "react-icons/hi";
-import { songs } from "../assets/assets";
 import { searchCtx } from "../contexts/SearchContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { query, setQuery } = searchCtx();
-
+  const navigate = useNavigate();
   const [menuBarOpen, setMenuBarOpen] = useState(false);
   return (
     <>
@@ -18,10 +18,12 @@ const Header = () => {
         {/* left side */}
         <div className="flex-center">
           <BsSpotify
+            onClick={() => navigate("/")}
             title="Spotify"
             className="text-[32px] text-text-p cursor-pointer"
           />
           <div
+            onClick={() => navigate("/")}
             title="Home"
             className="rounded-full p-3.5 ml-6 mr-2 bg-secondary cursor-pointer hover:scale-105 duration-150 hover:brightness-125 "
           >
@@ -81,10 +83,16 @@ const Header = () => {
               Install App
             </p>
           </div>
-          <p className="text-nowrap md:text-wrap text-[13px] font-bold cursor-pointer p-hover py-1">
+          <p
+            onClick={() => navigate("/signup")}
+            className="text-nowrap md:text-wrap text-[13px] font-bold cursor-pointer p-hover py-1"
+          >
             Sign up
           </p>
-          <p className="text-nowrap text-[16px] hover:brightness-95 bg-text-p text-black px-6 font-bold cursor-pointer p-hover py-3 rounded-full">
+          <p
+            onClick={() => navigate("/login")}
+            className="text-nowrap text-[16px] hover:brightness-95 bg-text-p text-black px-6 font-bold cursor-pointer p-hover py-3 rounded-full"
+          >
             Log in
           </p>
         </div>

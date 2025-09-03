@@ -4,7 +4,7 @@ import { FiGlobe } from "react-icons/fi";
 
 const MainLeft = () => {
   return (
-    <div className=" select-none overflow-hidden flex flex-col bg-primary flex-1 max-w-80 rounded-md min-w-64">
+    <div className=" select-none overflow-hidden flex flex-col bg-primary flex-1 max-w-80 rounded-md min-w-64 ml-2">
       {/* library */}
       <div className="flex-1 max-h-18 bg-tertiary flex justify-between items-center px-4 pb-4">
         <p className="cursor-default text-text-p font-bold">Your Library</p>

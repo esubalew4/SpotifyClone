@@ -24,7 +24,7 @@ const ArtistContents = ({ artist }) => {
 
   return (
     <div
-      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 `}
+      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 mr-2 `}
     >
       <div className="absolute z-1 w-full h-[270px] -left-3">
         {artist.coverBg ? (

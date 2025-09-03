@@ -21,7 +21,7 @@ const SingleSongContents = ({ item }) => {
 
   return (
     <div
-      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 `}
+      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 mr-2`}
     >
       {" "}
       <div

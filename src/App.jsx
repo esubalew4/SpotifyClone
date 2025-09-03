@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Router, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MainSection from "./sections/MainSection";
@@ -8,11 +8,17 @@ import Artists from "./sections/artist/Artists";
 import Radio from "./sections/radio/Radio";
 import Search from "./components/common/Search";
 import { SearchProvider } from "./contexts/SearchContext";
+import Signup from "./auth/Signup";
+import Login from "./auth/Login";
 
 function App() {
+  const location = useLocation();
+  const isLogin = location.pathname.startsWith("/login");
+  const isSignup = location.pathname.startsWith("/signup");
+
   return (
     <SearchProvider>
-      <Header />
+      {!isLogin && !isSignup && <Header />}
 
       <Routes>
         <Route path="/" element={<MainSection />} />
@@ -21,8 +27,11 @@ function App() {
         <Route path="/artist/:id" element={<Artists />} />
         <Route path="/playlist/:id" element={<Radio />} />
         <Route path="/search" element={<Search />} />
+        {/* auth */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer />
+      {!isLogin && !isSignup && <Footer />}
     </SearchProvider>
   );
 }
