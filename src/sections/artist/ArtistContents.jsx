@@ -127,7 +127,7 @@ const ArtistContents = ({ artist }) => {
           <div className="-mb-8 pb-10 bg-secondary">
             <PopularArtists
               excludeCurrent={excludeCurrent}
-              title="Fans also like"
+              title_text="Fans also like"
             />
           </div>
           <div className="pb-2 bg-secondary">

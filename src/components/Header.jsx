@@ -5,8 +5,12 @@ import { CiSearch } from "react-icons/ci";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { GrHomeRounded } from "react-icons/gr";
 import { HiArchive } from "react-icons/hi";
+import { songs } from "../assets/assets";
+import { searchCtx } from "../contexts/SearchContext";
 
 const Header = () => {
+  const { query, setQuery } = searchCtx();
+
   const [menuBarOpen, setMenuBarOpen] = useState(false);
   return (
     <>
@@ -27,6 +31,8 @@ const Header = () => {
             <input
               type="search"
               placeholder="What do you want to play?"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               className="flex-1 bg-secondary py-3 pl-12 pr-16 rounded-full focus:outline-1 outline-text w-full "
             />
             <CiSearch

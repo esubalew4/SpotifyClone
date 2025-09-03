@@ -298,6 +298,7 @@ export const albums = [
     releaseYear: 2020,
     songs: 2,
     popularity: 95,
+    isAlbum: true,
   },
   {
     id: "b7202ab2-2ccf-50a9-a5d6-c3ab397af838",
@@ -308,6 +309,7 @@ export const albums = [
     releaseYear: 2017,
     songs: 2,
     popularity: 93,
+    isAlbum: true,
   },
   {
     id: "5c3ff2b7-a9eb-5746-8fa6-9e8c3f379816",
@@ -318,6 +320,7 @@ export const albums = [
     releaseYear: 2011,
     songs: 1,
     popularity: 77,
+    isAlbum: true,
   },
   {
     id: "a9e76e02-75de-5a2f-9962-c923b3f0eddc",
@@ -328,6 +331,7 @@ export const albums = [
     releaseYear: 1990,
     songs: 9,
     popularity: 87,
+    isAlbum: true,
   },
   {
     id: "28bb103d-5a87-5123-8dab-1354da940617",
@@ -338,6 +342,7 @@ export const albums = [
     releaseYear: 2025,
     songs: 10,
     popularity: 89,
+    isAlbum: true,
   },
 ];
 

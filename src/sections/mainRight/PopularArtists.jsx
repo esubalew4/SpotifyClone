@@ -5,12 +5,18 @@ import { IoIosPlay } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const PopularArtists = ({
-  title = "Popular artists",
+  title_text = "Popular artists",
   excludeCurrent = artists,
+  searchedSong,
 }) => {
-  const sortedByPopularity = excludeCurrent.sort(
+  const sortedByPopularity = [...excludeCurrent].sort(
     (a, b) => b.popularity - a.popularity
   );
+  const items = searchedSong
+    ? Array.isArray(searchedSong)
+      ? searchedSong
+      : [searchedSong]
+    : sortedByPopularity;
 
   const containerRef = useRef();
   return (
@@ -19,7 +25,7 @@ const PopularArtists = ({
       {/* title */}
       <div className="relative flex justify-between px-8 mb-4">
         <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
-          {title}
+          {title_text}
         </p>
         <button className="text-sm hover:underline cursor-pointer">
           Show all
@@ -29,7 +35,7 @@ const PopularArtists = ({
         ref={containerRef}
         className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
-        {sortedByPopularity.map((item) => (
+        {items.map((item) => (
           <Link key={item.id} to={`/artist/${item.id}`}>
             <div className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
