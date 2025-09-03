@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const NavigationIcon = ({ containerRef }) => {
@@ -27,9 +27,6 @@ const NavigationIcon = ({ containerRef }) => {
   useEffect(() => {
     containerRef.current.addEventListener("scroll", checkEdge);
     checkEdge();
-    return () => {
-      containerRef.current.removeEventListener("scroll", checkEdge);
-    };
   }, []);
   return (
     <div>

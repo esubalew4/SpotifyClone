@@ -27,7 +27,7 @@ const Header = () => {
             <input
               type="search"
               placeholder="What do you want to play?"
-              className="flex-1 bg-secondary py-3 pl-12 pr-15 rounded-full focus:outline-1 outline-text w-full "
+              className="flex-1 bg-secondary py-3 pl-12 pr-16 rounded-full focus:outline-1 outline-text w-full "
             />
             <CiSearch
               title="Search"
