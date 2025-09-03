@@ -5,6 +5,7 @@ import { IoIosPlay } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const PopularRadio = () => {
+  const fixedRadio = radios.filter((a) => a.id != "top10");
   const containerRef = useRef();
   return (
     <div className=" pt-7 relative bg-secondary">
@@ -22,7 +23,7 @@ const PopularRadio = () => {
         ref={containerRef}
         className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
-        {radios.map((item) => (
+        {fixedRadio.map((item) => (
           <Link key={item.id} to={`/playlist/${item.id}`}>
             <div className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
