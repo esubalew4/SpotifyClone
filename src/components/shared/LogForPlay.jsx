@@ -13,7 +13,7 @@ const LogForPlay = ({ ref, setIsLogOpened }) => {
     <>
       <div
         ref={ref}
-        className="bg-gradient-to-b from-[#4a0f0f] via-[#4a0f0f] to-[#2e2d2d] size-full sm:w-96 md:w-[700px] md:h-[420px] rounded-lg flex flex-col md:flex-row items-center justify-center  md:justify-between gap-4 md:gap-16 md:p-20"
+        className="bg-gradient-to-b from-[#4a0f0f] via-[#4a0f0f] to-[#2e2d2d] size-full sm:w-96 md:w-[740px] md:h-[420px] rounded-lg flex flex-col md:flex-row items-center justify-center  md:justify-between gap-4 md:gap-12 md:p-16"
       >
         {" "}
         {/* cover */}

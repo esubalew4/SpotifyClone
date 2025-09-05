@@ -39,18 +39,18 @@ const Header = () => {
               placeholder="What do you want to play?"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="flex-1 bg-secondary py-3 pl-12 pr-16 rounded-full focus:outline-1 outline-text w-full "
+              className="flex-1 bg-secondary py-3 pl-12 sm:pr-16 rounded-full focus:outline-1 outline-text w-full "
             />
             <CiSearch
               title="Search"
               className="text-3xl absolute top-1/2 -translate-1/2 left-6  cursor-pointer hover:scale-105 duration-150"
             />
-            <p className="absolute top-1/2 -translate-y-1/2 right-12 text-3xl text-text/50">
+            <p className="hidden sm:block absolute top-1/2 -translate-y-1/2 right-12 text-3xl text-text/50">
               |
             </p>
             <HiArchive
               title="Browse"
-              className="text-3xl absolute top-1/2 -translate-1/2 right-0 cursor-pointer hover:scale-105 duration-150"
+              className="hidden sm:block text-3xl absolute top-1/2 -translate-1/2 right-0 cursor-pointer hover:scale-105 duration-150"
             />
           </div>
         </div>
@@ -59,7 +59,7 @@ const Header = () => {
           {/* small screen */}
 
           {menuBarOpen && (
-            <div className="text-neutral-100 cursor-default fixed top-13 right-2 bg-primary rounded-sm flex-col w-[200px] px-1 py-1 flex-center md:hidden gap-2 text-[13px] font-bold z-1">
+            <div className="text-neutral-100 cursor-default fixed top-13 right-2 bg-primary rounded-sm flex-col w-[200px] px-1 py-1 flex-center md:hidden gap-2 text-[13px] font-bold z-10">
               <div className="hover:bg-tertiary px-3 py-3 rounded-sm flex justify-between w-full group">
                 <p className="group-hover:underline">Premium</p>
                 <BiLinkExternal className="text-xl text-text-p" />
