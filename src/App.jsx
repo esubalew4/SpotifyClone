@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MainSection from "./sections/MainSection";
 import Song from "./sections/songs/Song";
-import Album from "./sections/albums/album";
 import Artists from "./sections/artist/Artists";
 import Radio from "./sections/radio/Radio";
 import Search from "./components/common/Search";
@@ -16,6 +15,7 @@ import TrendingSection from "./sections/showAllSection/TrendingSection";
 import ArtistsSection from "./sections/showAllSection/ArtistsSection";
 import AlbumsAndSinglesSection from "./sections/showAllSection/AlbumsAndSinglesSection";
 import RadioSection from "./sections/showAllSection/RadioSection";
+import AlbumContents from "./sections/albums/AlbumContents";
 
 function App() {
   const location = useLocation();
@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainSection />} />
           <Route path="/song/:id" element={<Song />} />
-          <Route path="/album/:id" element={<Album />} />
+          <Route path="/album/:id" element={<AlbumContents />} />
           <Route path="/artist/:id" element={<Artists />} />
           <Route path="/playlist/:id" element={<Radio />} />
 
