@@ -1,12 +1,16 @@
 import React from "react";
 import { BiPlus } from "react-icons/bi";
 import { FiGlobe } from "react-icons/fi";
+import LogForPlaylist from "../components/shared/LogForPlaylist";
+import { PlaylistLogCtx } from "../contexts/PlaylistLogContext";
 
 const MainLeft = () => {
+  const { isLogOpen, setIsLogOpen } = PlaylistLogCtx();
   return (
-    <div className=" select-none overflow-hidden flex flex-col bg-primary flex-1 max-w-80 rounded-md min-w-64 ml-2">
+    <div className="relative select-none flex flex-col flex-1 max-w-80 min-w-64 ml-2 text-text">
+      <LogForPlaylist />
       {/* library */}
-      <div className="flex-1 max-h-18 bg-tertiary flex justify-between items-center px-4 pb-4">
+      <div className="flex-1 max-h-18 bg-tertiary flex justify-between rounded-t-md items-center px-4 pb-4">
         <p className="cursor-default text-text-p font-bold">Your Library</p>
         <BiPlus
           title="Create playlist or folder"
@@ -22,7 +26,10 @@ const MainLeft = () => {
           <p className="text-xs font-bold text-text-p">
             It's easy, we'll help you
           </p>
-          <button className=" mt-2  cursor-pointer bg-white py-2 px-4 text-xs text-black font-bold rounded-full hover:scale-105 duration-75 hover:brightness-95">
+          <button
+            onClick={() => setIsLogOpen(true)}
+            className=" mt-2  cursor-pointer bg-white py-2 px-4 text-xs text-black font-bold rounded-full hover:scale-105 duration-75 hover:brightness-95 active:scale-100"
+          >
             Create playlist
           </button>
         </div>
@@ -33,13 +40,13 @@ const MainLeft = () => {
           <p className="text-xs font-bold text-text-p">
             We'll keep you updated on new episodes
           </p>
-          <button className=" mt-2  cursor-pointer bg-white py-2 px-4 text-xs text-black font-bold rounded-full hover:scale-105 duration-75 hover:brightness-95">
+          <button className=" mt-2  cursor-pointer bg-white py-2 px-4 text-xs text-black font-bold rounded-full hover:scale-105 duration-75 hover:brightness-95 active:scale-100">
             Browse podcasts
           </button>
         </div>
       </div>
       {/* info */}
-      <div className="flex-1 min-h-56 bg-tertiary py-6 px-6">
+      <div className="flex-1 min-h-56 rounded-b-md bg-tertiary py-6 px-6">
         <div className="text-[11px] flex gap-4 flex-wrap">
           <p className="cursor-pointer">Legal</p>
           <p className="cursor-pointer">Safety & Privacy Center</p>

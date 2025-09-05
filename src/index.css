@@ -14,7 +14,7 @@
   @apply flex justify-center items-center;
 }
 @utility p-hover {
-  @apply hover:brightness-150 py-1 hover:scale-104 duration-100;
+  @apply hover:brightness-150 py-1 active:scale-100 hover:scale-104 duration-100;
 }
 * {
   font-family: "montserrat", sans-serif;

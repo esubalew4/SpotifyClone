@@ -3,6 +3,7 @@ import { songs } from "../../assets/assets";
 import { IoIosPlay } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import NavigationIcon from "../../components/common/NavigationIcon";
+import Explicit from "../../components/shared/Explicit";
 
 const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
   const navigate = useNavigate();
@@ -21,7 +22,10 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
         <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
           {title_text}
         </p>
-        <button className="text-sm hover:underline cursor-pointer">
+        <button
+          onClick={() => navigate(`/section/trendings`)}
+          className="text-sm hover:underline cursor-pointer"
+        >
           Show all
         </button>
       </div>
@@ -29,11 +33,11 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
         ref={containerRef}
         className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
-        {items.map((track) => (
+        {items.slice(0, 8).map((track) => (
           <div
             key={track.id}
             onClick={() => navigate(`/song/${track.id}`)}
-            className="group flex flex-col p-4 cursor-pointer hover:bg-gradient-to-t from-primary via-primary to-transparent rounded-md duration-150 h-fit max-w-44"
+            className="group flex flex-col p-3 cursor-pointer hover:bg-gradient-to-t from-primary via-primary to-transparent rounded-md duration-150 h-fit max-w-[168px]"
           >
             {/*cover box */}
             <div className=" relative size-36 rounded-md overflow-hidden">
@@ -51,15 +55,17 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
               </div>
             </div>
             {/* title */}
-            <p className="hover:underline text-text-p mt-3">{track.title}</p>
+            <p className="hover:underline text-text-p mt-3 line-clamp-2">
+              {track.title}
+            </p>
             <Link to={`/artist/${track.artistId}`}>
               <p
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
-                className="text-sm hover:underline "
+                className="text-sm hover:underline line-clamp-2 "
               >
-                {track.artist}
+                {track.explicit && <Explicit />} {track.artist}
               </p>
             </Link>
           </div>

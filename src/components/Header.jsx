@@ -18,12 +18,16 @@ const Header = () => {
         {/* left side */}
         <div className="flex-center">
           <BsSpotify
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/"), setQuery("");
+            }}
             title="Spotify"
             className="text-[32px] text-text-p cursor-pointer"
           />
           <div
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/"), setQuery("");
+            }}
             title="Home"
             className="rounded-full p-3.5 ml-6 mr-2 bg-secondary cursor-pointer hover:scale-105 duration-150 hover:brightness-125 "
           >
@@ -77,7 +81,10 @@ const Header = () => {
             <p className="cursor-pointer p-hover py-2">Download</p>
           </div>
           <p className="text-3xl hidden md:block text-text-p">|</p>
-          <div className="flex-center gap-2 p-hover cursor-pointer">
+          <div
+            onClick={() => navigate("/download")}
+            className="flex-center gap-2 p-hover cursor-pointer"
+          >
             <FaRegArrowAltCircleDown className="text-lg" />
             <p className="text-nowrap md:text-wrap text-[13px] font-bold">
               Install App

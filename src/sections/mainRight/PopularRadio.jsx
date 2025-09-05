@@ -2,9 +2,10 @@ import { useRef } from "react";
 import { radios } from "../../assets/assets";
 import NavigationIcon from "../../components/common/NavigationIcon";
 import { IoIosPlay } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PopularRadio = () => {
+  const navigate = useNavigate();
   const fixedRadio = radios.filter((a) => a.id != "top10");
   const containerRef = useRef();
   return (
@@ -15,7 +16,10 @@ const PopularRadio = () => {
         <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
           Popular radio
         </p>
-        <button className="text-sm hover:underline cursor-pointer">
+        <button
+          onClick={() => navigate("/section/radios")}
+          className="text-sm hover:underline cursor-pointer"
+        >
           Show all
         </button>
       </div>
@@ -23,9 +27,9 @@ const PopularRadio = () => {
         ref={containerRef}
         className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
-        {fixedRadio.map((item) => (
+        {fixedRadio.slice(0, 8).map((item) => (
           <Link key={item.id} to={`/playlist/${item.id}`}>
-            <div className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
+            <div className="max-w-[168px] group flex flex-col p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
               <div className=" relative size-36 rounded-md overflow-hidden">
                 <img

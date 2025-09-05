@@ -43,7 +43,7 @@ const SingleSongContents = ({ item }) => {
         {/* header */}
         <div className="flex gap-6 pb-40 items-end bg-gradient-to-t from-transparent via-amber-900 via-40% to-yellow-300 py-8 px-6">
           {/* image */}
-          <div className="hover:scale-104 duration-200 size-30 lg:size-44 hidden lg:block rounded-sm overflow-hidden shadow">
+          <div className="shrink-0 hover:scale-104 duration-200 size-30 lg:size-44 hidden lg:block rounded-sm overflow-hidden shadow">
             <img src={item.cover} className="size-full object-cover" alt="" />
           </div>
           <div className="font-bold text-sm flex flex-col gap-3">

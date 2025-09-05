@@ -75,7 +75,7 @@ const SelectedPopular = ({ item }) => {
                   <p>
                     {track.album.toLowerCase().includes("single")
                       ? "single"
-                      : "album"}
+                      : "track"}
                   </p>
                 </div>
               </div>

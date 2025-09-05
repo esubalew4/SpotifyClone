@@ -56,7 +56,7 @@ const AlbumContents = ({ item }) => {
         {/* header */}{" "}
         <div className="flex gap-6 pb-40 items-end bg-gradient-to-t from-transparent via-gray-800 via-40% to-blue-500 py-10 px-6">
           {/* image */}
-          <div className="hover:scale-104 duration-200 size-30 lg:size-40 hidden lg:block rounded-sm overflow-hidden shadow">
+          <div className="hover:scale-104 duration-200 size-30 lg:size-40 hidden lg:block rounded-sm overflow-hidden shadow shrink-0">
             <img src={item.cover} className="size-full object-cover" alt="" />
           </div>
           <div className="font-bold text-sm flex flex-col gap-3">

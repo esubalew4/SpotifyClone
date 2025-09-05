@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Top10Populars = () => {
   return (
     <Link to="/playlist/top10">
-      <div className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-44">
+      <div className="group flex flex-col p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-[168px]">
         {/*cover box */}
         <div className=" relative size-36 rounded-md overflow-hidden">
           <img

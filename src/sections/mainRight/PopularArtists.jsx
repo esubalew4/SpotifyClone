@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { artists, songs } from "../../assets/assets";
 import NavigationIcon from "../../components/common/NavigationIcon";
 import { IoIosPlay } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PopularArtists = ({
   title_text = "Popular artists",
@@ -17,7 +17,7 @@ const PopularArtists = ({
       ? searchedSong
       : [searchedSong]
     : sortedByPopularity;
-
+  const navigate = useNavigate();
   const containerRef = useRef();
   return (
     <div className=" pt-7 relative bg-secondary">
@@ -27,7 +27,10 @@ const PopularArtists = ({
         <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
           {title_text}
         </p>
-        <button className="text-sm hover:underline cursor-pointer">
+        <button
+          onClick={() => navigate("/section/artists")}
+          className="text-sm hover:underline cursor-pointer"
+        >
           Show all
         </button>
       </div>
@@ -35,9 +38,9 @@ const PopularArtists = ({
         ref={containerRef}
         className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
-        {items.map((item) => (
+        {items.slice(0, 8).map((item) => (
           <Link key={item.id} to={`/artist/${item.id}`}>
-            <div className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
+            <div className="group flex flex-col p-3 cursor-pointer max-w-[168px] hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
               <div className=" relative size-36 rounded-full">
                 <img

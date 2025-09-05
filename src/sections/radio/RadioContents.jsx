@@ -91,7 +91,7 @@ const RadioContents = ({ radio: ir }) => {
             <p className="text-2xl lg:text-5xl  text-text-p font-bold">
               {radio.title}
             </p>
-            <p className="text-sm  font-bold">
+            <p className="text-sm hidden lg:block  font-bold">
               With {radio.artists.join(", ")}
             </p>
             <div className="flex gap-1">
@@ -103,16 +103,16 @@ const RadioContents = ({ radio: ir }) => {
                   alt=""
                 />
               </div>
-              <p className="text-text-p">
+              <p className="text-text-p flex items-center gap-1">
                 <span className="hover:underline cursor-pointer">Spotify</span>
-                <span className="text-text"> &#xb7;</span>
+                <span className="text-text hidden lg:block"> &#xb7;</span>
               </p>
-              <p>{radio.saves} saves &#xb7;</p>
-              <p className="space-x-1">
+              <p className="hidden lg:block">{radio.saves} saves &#xb7;</p>
+              <p className="space-x-1 hidden lg:block">
                 <span>{collections.length}</span>
                 <span>{collections.length <= 1 ? "song" : "songs"},</span>
               </p>
-              about {totalDuration}
+              <span className="hidden lg:block">about {totalDuration}</span>
             </div>
             <p className="hover:underline cursor-pointer">
               About recommendations and the impact of promotion

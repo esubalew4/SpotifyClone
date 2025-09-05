@@ -12,9 +12,9 @@ const FeaturedCharts = () => {
         <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
           Featured Charts
         </p>
-        <button className="text-sm hover:underline cursor-pointer">
+        {/* <button className="text-sm hover:underline cursor-pointer">
           Show all
-        </button>
+        </button> */}
       </div>
       <div
         ref={containerRef}

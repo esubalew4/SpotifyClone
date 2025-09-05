@@ -8,11 +8,23 @@ const PopularAlbums = ({
   title_text = "Popular albums and singles",
   searchedSong,
 }) => {
-  const singles = songs.map((pr) => ({ ...pr, type: "single" }));
-  const albumWithType = albums.map((pr) => ({ ...pr, type: "album" }));
-  const merged = [...singles, ...albumWithType];
-  const allCollections = merged.sort((a, b) => b.popularity - a.popularity);
+  // const singles = songs.map((pr) => ({ ...pr, type: "single" }));
 
+  // const albumWithType = albums.map((pr) => ({ ...pr, type: "album" }));
+  // const merged = [...singles, ...albumWithType];
+  // const allCollections = merged.sort((a, b) => b.popularity - a.popularity);
+  const singles = songs.filter((a) => a.album.toLowerCase() === "single");
+  const uniqueAlbums = Array.from(
+    new Set(
+      songs.filter((a) => a.album.toLowerCase() != "single").map((b) => b.album)
+    )
+  ).map((albumName) => {
+    return albums.find((a) => a.title === albumName);
+  });
+  const allCollections = [...singles, ...uniqueAlbums].sort(
+    (a, b) => b.popularity - a.popularity
+  );
+  // TODO: exclude tracks of labum to not included inside this array if album is exist . so only get one album instead of all tracks in one album name
   const items = searchedSong ? searchedSong : allCollections;
   const containerRef = useRef();
   const navigate = useNavigate();
@@ -24,7 +36,10 @@ const PopularAlbums = ({
         <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
           {title_text}
         </p>
-        <button className="text-sm hover:underline cursor-pointer">
+        <button
+          onClick={() => navigate("/section/albums_and_singles")}
+          className="text-sm hover:underline cursor-pointer"
+        >
           Show all
         </button>
       </div>
@@ -32,7 +47,7 @@ const PopularAlbums = ({
         ref={containerRef}
         className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
-        {items.map((itemc) => {
+        {items.slice(0, 8).map((itemc) => {
           const linkTo =
             itemc.type === "single"
               ? `/song/${itemc.id}`
@@ -40,8 +55,11 @@ const PopularAlbums = ({
           return (
             <div
               key={itemc.id}
-              onClick={() => navigate(linkTo)}
-              className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" }),
+                  navigate(linkTo);
+              }}
+              className="group flex flex-col p-3 max-w-[168px] cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
             >
               {/*cover box */}
               <div className=" relative size-36 rounded-md overflow-hidden">
