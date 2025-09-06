@@ -6,7 +6,7 @@ const Top10Populars = () => {
     <Link to="/playlist/top10">
       <div className="group flex flex-col p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-28 sm:max-w-[168px]">
         {/*cover box */}
-        <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
+        <div className=" relative size-[135px] sm:size-36 rounded-md overflow-hidden">
           <img
             src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"
             className="size-full object-cover"

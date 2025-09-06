@@ -113,7 +113,7 @@ const AlbumContents = ({ item }) => {
 
           <AlbumTracksTable items={albumTracks} />
           <SelectedPopular item={item} />
-          <div className="pb-2">
+          <div className="pb-20">
             <MainRightFooter />
           </div>
         </div>

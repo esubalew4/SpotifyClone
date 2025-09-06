@@ -9,12 +9,12 @@ import { searchCtx } from "../contexts/SearchContext";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const { query, setQuery } = searchCtx();
+  const { query, setQuery, srchRef } = searchCtx();
   const navigate = useNavigate();
   const [menuBarOpen, setMenuBarOpen] = useState(false);
   return (
     <>
-      <header className=" fixed z-50 sm:static justify-between text-text w-full top-0 right-0 left-0 h-12 sm:h-16 bg-neutral flex items-center pl-4 sm:pl-7 pr-2">
+      <header className=" fixed z-50 sm:static justify-between text-text w-full top-0 right-0 left-0 h-14 sm:h-16 bg-neutral flex items-center pl-4 sm:pl-7 pr-2">
         {/* left side */}
         <div className="flex-center">
           <BsSpotify
@@ -36,6 +36,7 @@ const Header = () => {
           </div>
           <div className="flex-1 ml-2 sm:ml-0 relative max-w-[500px] mr-4 border hover:border-text/30 border-transparent duration-300 rounded-full hover:brightness-125">
             <input
+              ref={srchRef}
               type="search"
               placeholder="What do you want to play?"
               value={query}

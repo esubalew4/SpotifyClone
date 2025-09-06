@@ -29,7 +29,7 @@ const NavigationIcon = ({ containerRef }) => {
     checkEdge();
   }, []);
   return (
-    <div>
+    <div className="hidden sm:block">
       {" "}
       {!isStart && (
         <div

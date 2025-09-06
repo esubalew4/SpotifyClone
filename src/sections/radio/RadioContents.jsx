@@ -144,7 +144,7 @@ const RadioContents = ({ radio: ir }) => {
             isTop10={isTop10}
             items={collections}
           />
-          <div className="pb-2">
+          <div className="pb-20">
             <MainRightFooter />
           </div>
         </div>

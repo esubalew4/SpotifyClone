@@ -15,7 +15,7 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
   const items = searchedSong ? searchedSong : trending_songs;
 
   return (
-    <div className=" pt-7 relative bg-gradient-to-b from-primary/50 via-primary/50 to-secondary">
+    <div className=" pt-12 relative bg-gradient-to-b from-primary/50 via-primary/50 to-secondary">
       <NavigationIcon containerRef={containerRef} />
       {/* title */}
       <div className="relative flex justify-between px-4 sm:px-8">
@@ -40,7 +40,7 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
             className="group flex flex-col p-2 sm:p-3 cursor-pointer hover:bg-gradient-to-t from-primary via-primary to-transparent rounded-md duration-150 h-fit max-w-[168px]"
           >
             {/*cover box */}
-            <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
+            <div className=" relative size-[135px] sm:size-36 rounded-md overflow-hidden">
               <img
                 src={track.cover}
                 className="size-full object-cover"

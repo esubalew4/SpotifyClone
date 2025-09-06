@@ -1,9 +1,11 @@
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
+import { AboutModalCtx } from "../../contexts/AboutModalContext";
 
 const MainRightFooter = () => {
+  const { setIsPoped } = AboutModalCtx();
   return (
-    <div className="select-text mb-24 sm:mb-0">
+    <div className="select-text  sm:mb-0">
       <div className="w-[95%] mx-auto mt-8 mb-10  h-0.5 bg-text/30"></div>{" "}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 px-4">
         <div>
@@ -82,7 +84,15 @@ const MainRightFooter = () => {
         </div>
       </div>
       <div className="w-[95%] mx-auto my-10 h-0.5 bg-text/30"></div>
-      <p className="ml-4 mb-8">&copy; 2025 Spotify AB</p>
+      <p className="text-sm mt-2 ml-4 mb-8">
+        &copy; 2025 Esubalew Hussen ·{" "}
+        <span
+          onClick={() => setIsPoped(true)}
+          className="underline cursor-pointer hover:brightness-150 duration-100"
+        >
+          About
+        </span>
+      </p>
     </div>
   );
 };

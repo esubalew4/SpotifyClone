@@ -13,15 +13,15 @@ const ArtistsSection = () => {
     <div className=" text-text flex gap-2 flex-1 min-h-[430px]">
       <MainLeft />
       <div
-        className={`py-16 sm:py-0 sm:mr-2 bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto overflow-x-hidden sm:[&::-webkit-scrollbar]:w-3 sm:[&::-webkit-scrollbar-track]:bg-transparent sm:[&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col p-4 sm:p-8 gap-4`}
+        className={`py-20 sm:py-0 sm:mr-2 bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto overflow-x-hidden sm:[&::-webkit-scrollbar]:w-3 sm:[&::-webkit-scrollbar-track]:bg-transparent sm:[&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col p-8 sm:p-8 gap-4`}
       >
         <p className="text-lg sm:text-4xl font-bold ">Popular Artists</p>
         <div className="flex flex-wrap gap-1">
           {Popular_artists.map((artist) => (
             <Link key={artist.id} to={`/artist/${artist.id}`}>
-              <div className="group flex flex-col p-3 cursor-pointer max-w-28 sm:max-w-[168px] hover:bg-primary rounded-md duration-150 h-fit">
+              <div className="group flex flex-col p-3 cursor-pointer max-w-40 sm:max-w-[168px] hover:bg-primary rounded-md duration-150 h-fit">
                 {/*cover box */}
-                <div className=" relative size-24 sm:size-36 rounded-full">
+                <div className=" relative size-[135px] sm:size-36 rounded-full">
                   <img
                     src={artist.cover}
                     className="size-full object-cover rounded-full"

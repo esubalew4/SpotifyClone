@@ -47,9 +47,9 @@ const SelectedPopular = ({ item }) => {
         >
           {selected_songs.map((track) => (
             <Link key={track.id} to={`/song/${track.id}`}>
-              <div className="group flex flex-col p-2 sm:p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-28 sm:max-w-44">
+              <div className="group flex flex-col p-2 sm:p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-40 sm:max-w-44">
                 {/*cover box */}
-                <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
+                <div className=" relative size-[135px] sm:size-36 rounded-md overflow-hidden">
                   <img
                     src={track.cover}
                     className="size-full object-cover"

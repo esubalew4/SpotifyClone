@@ -42,7 +42,7 @@ const PopularArtists = ({
           <Link key={item.id} to={`/artist/${item.id}`}>
             <div className="group flex flex-col p-2 sm:p-3 cursor-pointer max-w-[168px] hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
-              <div className=" relative size-24 sm:size-36 rounded-full">
+              <div className=" relative size-[135px] sm:size-36 rounded-full">
                 <img
                   src={item.cover}
                   className="size-full object-cover rounded-full"

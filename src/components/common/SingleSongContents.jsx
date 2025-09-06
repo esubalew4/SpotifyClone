@@ -21,7 +21,7 @@ const SingleSongContents = ({ item }) => {
 
   return (
     <div
-      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 mr-2 mt-10 sm:mt-0`}
+      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 sm:mr-2 mt-10 sm:mt-0`}
     >
       {" "}
       <div
@@ -40,7 +40,7 @@ const SingleSongContents = ({ item }) => {
       </div>
       <div
         ref={containerRef}
-        className="bg-secondary flex-1 rounded-md min-w-[460px]  overflow-y-auto [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-600 select-none flex flex-col gap-4"
+        className="bg-secondary flex-1 rounded-md min-w-[460px]  overflow-y-auto sm:[&::-webkit-scrollbar]:w-3 sm:[&::-webkit-scrollbar-track]:bg-transparent sm:[&::-webkit-scrollbar-thumb]:bg-gray-600 select-none flex flex-col gap-4"
       >
         {/* header */}
         <div className="flex gap-6 pb-40 items-start sm:items-end bg-gradient-to-t from-transparent via-amber-900 via-40% to-yellow-300 py-8 px-4 sm:px-6 flex-col sm:flex-row">
@@ -97,7 +97,7 @@ const SingleSongContents = ({ item }) => {
 
           <SpecificArtistSongs item={item} />
           <SelectedPopular item={item} />
-          <div className="pb-2">
+          <div className="pb-20">
             <MainRightFooter />
           </div>
         </div>

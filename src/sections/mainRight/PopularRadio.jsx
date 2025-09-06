@@ -31,7 +31,7 @@ const PopularRadio = () => {
           <Link key={item.id} to={`/playlist/${item.id}`}>
             <div className="max-w-[168px] group flex flex-col p-2 sm:p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
-              <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
+              <div className=" relative size-[135px] sm:size-36 rounded-md overflow-hidden">
                 <img
                   src={item.cover}
                   className="size-full object-cover"

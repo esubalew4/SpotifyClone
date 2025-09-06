@@ -62,7 +62,7 @@ const PopularAlbums = ({
               className="group flex flex-col p-2 sm:p-3 max-w-[168px] cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
             >
               {/*cover box */}
-              <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
+              <div className=" relative size-[135px] sm:size-36 rounded-md overflow-hidden">
                 <img
                   src={itemc.cover}
                   className="size-full object-cover"

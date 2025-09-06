@@ -5,7 +5,7 @@ import LogForPlaylist from "../components/shared/LogForPlaylist";
 import { PlaylistLogCtx } from "../contexts/PlaylistLogContext";
 
 const MainLeft = () => {
-  const { isLogOpen, setIsLogOpen } = PlaylistLogCtx();
+  const { setIsLogOpen } = PlaylistLogCtx();
   return (
     <div className="hidden relative select-none sm:flex flex-col flex-1 max-w-80 min-w-64 ml-2 text-text">
       <LogForPlaylist />
