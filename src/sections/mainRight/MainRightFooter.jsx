@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter } from "react-icons/fa";
 
 const MainRightFooter = () => {
   return (
-    <div className="select-text">
+    <div className="select-text mb-24 sm:mb-0">
       <div className="w-[95%] mx-auto mt-8 mb-10  h-0.5 bg-text/30"></div>{" "}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 px-4">
         <div>

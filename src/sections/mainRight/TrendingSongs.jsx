@@ -18,8 +18,8 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
     <div className=" pt-7 relative bg-gradient-to-b from-primary/50 via-primary/50 to-secondary">
       <NavigationIcon containerRef={containerRef} />
       {/* title */}
-      <div className="relative flex justify-between px-8">
-        <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
+      <div className="relative flex justify-between px-4 sm:px-8">
+        <p className="text-lg sm:text-2xl font-medium text-text-p hover:underline cursor-pointer">
           {title_text}
         </p>
         <button
@@ -31,16 +31,16 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
       </div>
       <div
         ref={containerRef}
-        className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
+        className="flex overflow-y-hidden px-2 sm:px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
         {items.slice(0, 8).map((track) => (
           <div
             key={track.id}
             onClick={() => navigate(`/song/${track.id}`)}
-            className="group flex flex-col p-3 cursor-pointer hover:bg-gradient-to-t from-primary via-primary to-transparent rounded-md duration-150 h-fit max-w-[168px]"
+            className="group flex flex-col p-2 sm:p-3 cursor-pointer hover:bg-gradient-to-t from-primary via-primary to-transparent rounded-md duration-150 h-fit max-w-[168px]"
           >
             {/*cover box */}
-            <div className=" relative size-36 rounded-md overflow-hidden">
+            <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
               <img
                 src={track.cover}
                 className="size-full object-cover"
@@ -55,7 +55,7 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
               </div>
             </div>
             {/* title */}
-            <p className="hover:underline text-text-p mt-3 line-clamp-2">
+            <p className="hover:underline text-text-p mt-3 line-clamp-2 text-sm sm:text-[16px]">
               {track.title}
             </p>
             <Link to={`/artist/${track.artistId}`}>
@@ -63,7 +63,7 @@ const TrendingSongs = ({ title_text = "Trending songs", searchedSong }) => {
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
-                className="text-sm hover:underline line-clamp-2 "
+                className="hidden sm:block text-sm hover:underline line-clamp-2 "
               >
                 {track.explicit && <Explicit />} {track.artist}
               </p>

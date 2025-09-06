@@ -12,15 +12,15 @@ const RadioSection = () => {
     <div className=" text-text flex gap-2 flex-1 min-h-[430px]">
       <MainLeft />
       <div
-        className={`mr-2 bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col p-8 gap-4`}
+        className={`py-16 sm:py-0 sm:mr-2 bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto overflow-x-hidden sm:[&::-webkit-scrollbar]:w-3 sm:[&::-webkit-scrollbar-track]:bg-transparent sm:[&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col p-8 gap-4`}
       >
-        <p className="text-4xl font-bold ">Popular Radios</p>
+        <p className="text-lg sm:text-4xl font-bold ">Popular Radios</p>
         <div className="flex flex-wrap gap-1">
           {fixedRadio.map((item) => (
             <Link key={item.id} to={`/playlist/${item.id}`}>
-              <div className="max-w-[168px] group flex flex-col p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
+              <div className="max-w-28 sm:max-w-[168px] group flex flex-col p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
                 {/*cover box */}
-                <div className=" relative size-36 rounded-md overflow-hidden">
+                <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
                   <img
                     src={item.cover}
                     className="size-full object-cover"

@@ -26,9 +26,11 @@ const AlbumsAndSinglesSection = () => {
     <div className=" text-text flex gap-2 flex-1 min-h-[430px]">
       <MainLeft />
       <div
-        className={`mr-2 bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col p-8 gap-4`}
+        className={`py-16 sm:py-0 sm:mr-2 bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto overflow-x-hidden sm:[&::-webkit-scrollbar]:w-3 sm:[&::-webkit-scrollbar-track]:bg-transparent sm:[&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col p-4 sm:p-8 gap-4`}
       >
-        <p className="text-4xl font-bold ">Popular Albums and Singles</p>
+        <p className="text-lg sm:text-4xl font-bold ">
+          Popular Albums and Singles
+        </p>
         <div className="flex flex-wrap gap-1">
           {allCollections.map((itemc) => {
             const linkTo =
@@ -42,10 +44,10 @@ const AlbumsAndSinglesSection = () => {
                   window.scrollTo({ top: 0, behavior: "smooth" }),
                     navigate(linkTo);
                 }}
-                className="group flex flex-col p-3 max-w-[168px] cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
+                className="group flex flex-col p-3 max-w-28 sm:max-w-[168px] cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
               >
                 {/*cover box */}
-                <div className=" relative size-36 rounded-md overflow-hidden">
+                <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
                   <img
                     src={itemc.cover}
                     className="size-full object-cover"
@@ -60,13 +62,13 @@ const AlbumsAndSinglesSection = () => {
                   </div>
                 </div>
                 {/* title */}
-                <p className="hover:underline text-text-p mt-3">
+                <p className="hover:underline line-clamp-2 text-text-p mt-3">
                   {itemc.title}
                 </p>
                 <Link to={`/artist/${itemc.artistId}`}>
                   <p
                     onClick={(e) => e.stopPropagation()}
-                    className="text-sm line-clamp-2 hover:underline"
+                    className="text-sm line-clamp-2 hover:underline hidden sm:block"
                   >
                     {itemc.artist}
                   </p>

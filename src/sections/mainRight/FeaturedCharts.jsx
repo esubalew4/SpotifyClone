@@ -8,8 +8,8 @@ const FeaturedCharts = () => {
     <div className=" pt-7 relative bg-secondary">
       <NavigationIcon containerRef={containerRef} />
       {/* title */}
-      <div className="relative flex justify-between px-8 mb-4">
-        <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
+      <div className="relative flex justify-between px-4 sm:px-8 mb-4">
+        <p className="text-lg sm:text-2xl font-medium text-text-p hover:underline cursor-pointer">
           Featured Charts
         </p>
         {/* <button className="text-sm hover:underline cursor-pointer">
@@ -18,7 +18,7 @@ const FeaturedCharts = () => {
       </div>
       <div
         ref={containerRef}
-        className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
+        className="flex overflow-y-hidden px-2 sm:px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
         <Top10Populars />
       </div>

@@ -21,29 +21,31 @@ const SingleSongContents = ({ item }) => {
 
   return (
     <div
-      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 mr-2`}
+      className={` relative flex-1 rounded-md min-w-[500px]  overflow-y-hidden flex flex-col gap-4 mr-2 mt-10 sm:mt-0`}
     >
       {" "}
       <div
         className={` ${
           isScrolled ? "opacity-100" : "opacity-0"
-        } absolute w-full h-16 bg-amber-900 shadow-lg shadow-text/5 top-0 -left-3 flex items-center pl-6 gap-4 z-2`}
+        } absolute w-full h-16 bg-amber-900 shadow-lg shadow-text/5 top-2 sm:top-0 -left-3 flex items-center pl-6 gap-4 z-2`}
       >
         {/* scroll header */}
         <div className=" z-2 cursor-pointer size-fit p-2 py-2.5 pl-3 rounded-full bg-green-600 text-black flex-center transition-all duration-200 hover:scale-104 hover:brightness-125">
           <IoIosPlay className="text-2xl" />
         </div>
 
-        <p className="text-2xl font-bold text-text-p">{item.title}</p>
+        <p className="text-lg line-clamp-2 sm:text-2xl font-bold text-text-p">
+          {item.title}
+        </p>
       </div>
       <div
         ref={containerRef}
         className="bg-secondary flex-1 rounded-md min-w-[460px]  overflow-y-auto [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-600 select-none flex flex-col gap-4"
       >
         {/* header */}
-        <div className="flex gap-6 pb-40 items-end bg-gradient-to-t from-transparent via-amber-900 via-40% to-yellow-300 py-8 px-6">
+        <div className="flex gap-6 pb-40 items-start sm:items-end bg-gradient-to-t from-transparent via-amber-900 via-40% to-yellow-300 py-8 px-4 sm:px-6 flex-col sm:flex-row">
           {/* image */}
-          <div className="shrink-0 hover:scale-104 duration-200 size-30 lg:size-44 hidden lg:block rounded-sm overflow-hidden shadow">
+          <div className=" shrink-0 hover:scale-104 duration-200 size-30 lg:size-44 block sm:hidden lg:block rounded-sm overflow-hidden shadow">
             <img src={item.cover} className="size-full object-cover" alt="" />
           </div>
           <div className="font-bold text-sm flex flex-col gap-3">
@@ -53,25 +55,29 @@ const SingleSongContents = ({ item }) => {
                 Rating: <span>{item.rating}</span>
               </p>
             </div>
-            <p className="text-5xl md:text-6xl  text-text-p font-bold">
+            <p className="text-2xl sm:text-5xl md:text-6xl  text-text-p font-bold">
               {item.title}
             </p>
-            <div className="flex gap-1">
-              {/* small image */}
-              <div className="size-6 rounded-full overflow-hidden shadow">
-                <img
-                  src={item.cover}
-                  className="size-full object-cover"
-                  alt=""
-                />
+            <div className="flex gap-1 flex-col sm:flex-row">
+              <div className="flex items-center gap-2">
+                {/* small image */}
+                <div className="size-6 rounded-full overflow-hidden shadow">
+                  <img
+                    src={item.cover}
+                    className="size-full object-cover"
+                    alt=""
+                  />
+                </div>
+                <p className="text-text-p">
+                  <span className="hover:underline">{item.artist}</span>
+                  <span className="text-text hidden sm:block"> &#xb7;</span>
+                </p>
               </div>
-              <p className="text-text-p">
-                <span className="hover:underline">{item.artist}</span>
-                <span className="text-text"> &#xb7;</span>
-              </p>
-              <p>{item.releaseYear} &#xb7;</p>
+              <div className="flex items-center gap-1">
+                <p>{item.releaseYear} &#xb7;</p>
 
-              <p>{item.duration}</p>
+                <p>{item.duration}</p>
+              </div>
             </div>
           </div>
         </div>

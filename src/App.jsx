@@ -16,6 +16,11 @@ import ArtistsSection from "./sections/showAllSection/ArtistsSection";
 import AlbumsAndSinglesSection from "./sections/showAllSection/AlbumsAndSinglesSection";
 import RadioSection from "./sections/showAllSection/RadioSection";
 import AlbumContents from "./sections/albums/AlbumContents";
+import Album from "./sections/albums/Album";
+import { GoHomeFill } from "react-icons/go";
+import { IoSearch } from "react-icons/io5";
+import { VscLibrary } from "react-icons/vsc";
+import { FaSpotify } from "react-icons/fa";
 
 function App() {
   const location = useLocation();
@@ -30,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainSection />} />
           <Route path="/song/:id" element={<Song />} />
-          <Route path="/album/:id" element={<AlbumContents />} />
+          <Route path="/album/:id" element={<Album />} />
           <Route path="/artist/:id" element={<Artists />} />
           <Route path="/playlist/:id" element={<Radio />} />
 
@@ -49,7 +54,31 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        {!isLogin && !isSignup && <Footer />}
+        {!isLogin && !isSignup && (
+          <>
+            <div className="z-40 h-16 text-text-p bg-neutral-950/90 fixed bottom-0 left-0 right-0 flex justify-around items-center sm:hidden">
+              <div className="flex-center text-2xl flex-col">
+                <GoHomeFill />
+                <p className="text-xs">Home</p>
+              </div>
+              <div className="flex-center text-2xl flex-col">
+                <IoSearch />
+                <p className="text-xs">Search</p>
+              </div>
+              <div className="flex-center text-2xl flex-col">
+                <VscLibrary />
+                <p className="text-xs">Your Library</p>
+              </div>
+              <div className="flex-center text-2xl flex-col">
+                <FaSpotify />
+                <p className="text-xs">Premium</p>
+              </div>
+            </div>
+            <div className="hidden sm:block">
+              <Footer />
+            </div>
+          </>
+        )}
       </PlaylistLogProvider>
     </SearchProvider>
   );

@@ -23,8 +23,8 @@ const PopularArtists = ({
     <div className=" pt-7 relative bg-secondary">
       <NavigationIcon containerRef={containerRef} />
       {/* title */}
-      <div className="relative flex justify-between px-8 mb-4">
-        <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
+      <div className="relative flex justify-between px-4 sm:px-8 mb-4">
+        <p className="text-lg sm:text-2xl font-medium text-text-p hover:underline cursor-pointer">
           {title_text}
         </p>
         <button
@@ -36,13 +36,13 @@ const PopularArtists = ({
       </div>
       <div
         ref={containerRef}
-        className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
+        className="flex overflow-y-hidden px-2 sm:px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
         {items.slice(0, 8).map((item) => (
           <Link key={item.id} to={`/artist/${item.id}`}>
-            <div className="group flex flex-col p-3 cursor-pointer max-w-[168px] hover:bg-primary rounded-md duration-150 h-fit">
+            <div className="group flex flex-col p-2 sm:p-3 cursor-pointer max-w-[168px] hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
-              <div className=" relative size-36 rounded-full">
+              <div className=" relative size-24 sm:size-36 rounded-full">
                 <img
                   src={item.cover}
                   className="size-full object-cover rounded-full"
@@ -57,8 +57,10 @@ const PopularArtists = ({
                 </div>
               </div>
               {/* title */}
-              <p className="hover:underline text-text-p mt-3">{item.name}</p>
-              <p className="text-sm tracking-wider">Artist</p>
+              <p className="text-sm sm:text-[16px] hover:underline text-text-p mt-3">
+                {item.name}
+              </p>
+              <p className="text-sm tracking-wider hidden sm:block ">Artist</p>
             </div>
           </Link>
         ))}

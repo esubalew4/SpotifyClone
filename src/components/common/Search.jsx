@@ -34,7 +34,7 @@ const Search = () => {
       </div>
     );
   return (
-    <div className="pb-8">
+    <div className=" pb-20 sm:pb-8">
       {searchedTitle.length > 0 && (
         <>
           <TrendingSongs title_text="Songs" searchedSong={searchedTitle} />

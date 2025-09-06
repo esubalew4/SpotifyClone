@@ -32,20 +32,20 @@ const PopularAlbums = ({
     <div className=" pt-7 relative bg-secondary">
       <NavigationIcon containerRef={containerRef} />
       {/* title */}
-      <div className="relative flex justify-between px-8 mb-4">
-        <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
+      <div className="relative flex justify-between px-4 sm:px-8 gap-4 mb-4">
+        <p className="text-lg sm:text-2xl font-medium text-text-p hover:underline cursor-pointer">
           {title_text}
         </p>
         <button
           onClick={() => navigate("/section/albums_and_singles")}
-          className="text-sm hover:underline cursor-pointer"
+          className="text-sm hover:underline cursor-pointer text-nowrap"
         >
           Show all
         </button>
       </div>
       <div
         ref={containerRef}
-        className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
+        className="flex overflow-y-hidden px-2 sm:px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
         {items.slice(0, 8).map((itemc) => {
           const linkTo =
@@ -59,10 +59,10 @@ const PopularAlbums = ({
                 window.scrollTo({ top: 0, behavior: "smooth" }),
                   navigate(linkTo);
               }}
-              className="group flex flex-col p-3 max-w-[168px] cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
+              className="group flex flex-col p-2 sm:p-3 max-w-[168px] cursor-pointer hover:bg-primary rounded-md duration-150 h-fit"
             >
               {/*cover box */}
-              <div className=" relative size-36 rounded-md overflow-hidden">
+              <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
                 <img
                   src={itemc.cover}
                   className="size-full object-cover"
@@ -77,11 +77,13 @@ const PopularAlbums = ({
                 </div>
               </div>
               {/* title */}
-              <p className="hover:underline text-text-p mt-3">{itemc.title}</p>
+              <p className="hover:underline line-clamp-2 text-text-p text-sm sm:text-[16px] mt-3">
+                {itemc.title}
+              </p>
               <Link to={`/artist/${itemc.artistId}`}>
                 <p
                   onClick={(e) => e.stopPropagation()}
-                  className="text-sm line-clamp-2 hover:underline"
+                  className="hidden sm:block text-sm line-clamp-2 hover:underline"
                 >
                   {itemc.artist}
                 </p>

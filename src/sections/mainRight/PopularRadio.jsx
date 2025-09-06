@@ -12,8 +12,8 @@ const PopularRadio = () => {
     <div className=" pt-7 relative bg-secondary">
       <NavigationIcon containerRef={containerRef} />
       {/* title */}
-      <div className="relative flex justify-between px-8 mb-4">
-        <p className="text-2xl font-medium text-text-p hover:underline cursor-pointer">
+      <div className="relative flex justify-between px-4 sm:px-8 mb-4">
+        <p className="text-lg sm:text-2xl font-medium text-text-p hover:underline cursor-pointer">
           Popular radio
         </p>
         <button
@@ -25,13 +25,13 @@ const PopularRadio = () => {
       </div>
       <div
         ref={containerRef}
-        className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
+        className="flex overflow-y-hidden px-2 sm:px-8 [&::-webkit-scrollbar]:hidden z-1 "
       >
         {fixedRadio.slice(0, 8).map((item) => (
           <Link key={item.id} to={`/playlist/${item.id}`}>
-            <div className="max-w-[168px] group flex flex-col p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
+            <div className="max-w-[168px] group flex flex-col p-2 sm:p-3 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit">
               {/*cover box */}
-              <div className=" relative size-36 rounded-md overflow-hidden">
+              <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
                 <img
                   src={item.cover}
                   className="size-full object-cover"

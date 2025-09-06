@@ -32,7 +32,7 @@ const SelectedPopular = ({ item }) => {
       <div className="overflow-x-auto">
         {" "}
         {selected_songs.length > 0 && (
-          <div className="relative flex justify-between px-8 py-4 gap-20">
+          <div className="relative flex justify-between px-4 sm:px-8 py-4 gap-4 sm:gap-20">
             <p className=" text-lg font-medium text-text-p hover:underline cursor-pointer line-clamp-3">
               Popular Released by {item.artist}
             </p>
@@ -43,13 +43,13 @@ const SelectedPopular = ({ item }) => {
         )}
         <div
           ref={containerRef}
-          className="flex overflow-y-hidden px-8 [&::-webkit-scrollbar]:hidden z-1 "
+          className="flex overflow-y-hidden px-2 sm:px-8 [&::-webkit-scrollbar]:hidden z-1 "
         >
           {selected_songs.map((track) => (
             <Link key={track.id} to={`/song/${track.id}`}>
-              <div className="group flex flex-col p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-44">
+              <div className="group flex flex-col p-2 sm:p-4 cursor-pointer hover:bg-primary rounded-md duration-150 h-fit max-w-28 sm:max-w-44">
                 {/*cover box */}
-                <div className=" relative size-36 rounded-md overflow-hidden">
+                <div className=" relative size-24 sm:size-36 rounded-md overflow-hidden">
                   <img
                     src={track.cover}
                     className="size-full object-cover"
@@ -64,10 +64,10 @@ const SelectedPopular = ({ item }) => {
                   </div>
                 </div>
                 {/* title */}
-                <p className="hover:underline line-clamp-2 text-text-p mt-3">
+                <p className="hover:underline text-sm sm:text-[16px] line-clamp-2 text-text-p mt-3">
                   {track.title}
                 </p>
-                <div className="flex items-center gap-1 text-sm">
+                <div className="flex items-center gap-1 text-xs sm:text-sm">
                   {" "}
                   <p className=" line-clamp-2">
                     {track.releaseYear} <span className="text-xl">&#xb7;</span>

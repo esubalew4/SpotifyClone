@@ -55,27 +55,29 @@ const RadioContents = ({ radio: ir }) => {
 
   return (
     <div
-      className={` relative flex-1 rounded-md min-w-72  overflow-y-hidden flex flex-col gap-4 mr-2`}
+      className={` mt-12 relative flex-1 rounded-md min-w-72  overflow-y-hidden flex flex-col gap-4 sm:mr-2`}
     >
       {" "}
       <div
         className={` ${
           isScrolled ? "opacity-100" : "opacity-0"
-        } absolute w-full h-16 bg-gray-800 shadow-lg shadow-text/5 top-0 -left-3 flex items-center pl-6 gap-4 z-3`}
+        } absolute w-full h-16 bg-gray-800 shadow-lg shadow-text/5 top-0 left-0 sm:-left-3 flex items-center pl-4 sm:pl-6 gap-4 z-3`}
       >
         {/* scroll header */}{" "}
         <div className=" z-2 cursor-pointer size-fit p-2 py-2.5 pl-3 rounded-full bg-green-600 text-black flex-center transition-all duration-200 hover:scale-104 hover:brightness-125">
           <IoIosPlay className="text-2xl" />
         </div>
-        <p className="text-2xl font-bold text-text-p">{radio.title}</p>
+        <p className="text-2xl line-clamp-2 font-bold text-text-p">
+          {radio.title}
+        </p>
       </div>
       <div
         ref={containerRef}
-        className="bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col gap-4"
+        className="bg-secondary flex-1 rounded-md min-w-72  overflow-y-auto sm:[&::-webkit-scrollbar]:w-3 sm:[&::-webkit-scrollbar-track]:bg-transparent sm:[&::-webkit-scrollbar-thumb]:bg-primary select-none flex flex-col gap-4"
       >
         {/* header */}{" "}
-        <div className="flex gap-6 pb-32 items-end relative py-6 lg:pt-12 lg:pb-36 px-6">
-          <div className="z-1 w-full h-[120%] absolute left-0 shadow">
+        <div className="flex gap-6 flex-col sm:flex-row pb-32 sm:items-end relative py-6 lg:pt-12 lg:pb-36 px-6">
+          <div className="z-1 w-full h-full sm:h-[120%] absolute left-0 shadow">
             <img
               src={radio.cover}
               className="size-full blur-2xl brightness-50 object-cover object-top"
@@ -83,7 +85,7 @@ const RadioContents = ({ radio: ir }) => {
             />
           </div>
           {/* image */}
-          <div className="z-2 hover:scale-104 duration-200 min-w-32 size-32 rounded-sm overflow-hidden shadow">
+          <div className="z-2 self-center hover:scale-104 duration-200 min-w-32 size-32 rounded-sm overflow-hidden shadow">
             <img src={radio.cover} className="size-full object-cover" alt="" />
           </div>
           <div className="z-2 font-medium text-sm flex flex-col gap-1">
